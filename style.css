@@ -1,5 +1,46 @@
+:root {
+
+    /*Theme 1 Colors*/
+    --main-background-theme-1: hsl(222, 26%, 31%);
+    --keypad-background-theme-1:  hsl(223, 31%, 20%);
+    --screen-background-theme-1: hsl(224, 36%, 15%);
+
+    --key-background-theme-1: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+
+    --key-toggle-background-theme-1: hsl(6, 63%, 50%);
+    --key-toggle-shadow-theme-1: hsl(6, 70%, 34%);
+
+    --number-key-background-theme-1: hsl(30, 25%, 89%);
+    --number-key-shadow-theme-1: hsl(28, 16%, 65%);
+
+    --text-color-theme-1: hsl(221, 14%, 31%);
+    --text-light-theme-1: hsl(0, 0%, 100%);
+
+    --main-font-family: 'League Spartan', sans-serif;
+    --number-size: 3.2rem;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--main-font-family);
+    font-size: var(--number-size);
+    font-weight: 700;
+}
+
 .attribution { 
     font-size: 11px; 
+    font-weight: 400;
     text-align: center; 
 }
 
