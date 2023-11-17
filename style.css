@@ -114,9 +114,48 @@ body {
 .calculator-container__keypad {
     width: 100%;
     height: 75%;
-    padding: 30px;
-    background-color: yellow;
+    padding: 20px;
+    background-color: gray;
     border-radius: 10px;
+}
+
+.keypad-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.keypad-container__rows {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 20%;
+}
+
+.keypad-container__buttons {
+    width: 25%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--main-font-family);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.keypad-container__buttons-del {
+    font-size: 2rem;
+}
+
+.keypad-container__buttons--reset {
+    width: 50%;
+    font-size: 2rem;
+}
+
+.keypad-container__buttons--equal {
+    width: 50%;
+    font-size: 2rem;
 }
 
 .attribution { 
