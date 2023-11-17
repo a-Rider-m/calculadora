@@ -11,60 +11,64 @@
   <title>Frontend Mentor | Calculator app</title>
 </head>
 <body>
-  <main>
-    <section>
-      <div>
-        <h2>calc</h2>
-        <p>theme</p>
-        <div>
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <div>cambiador de tema</div>
+  <section class="calculator-container">
+    <div class="calculator-container__top">
+      <h2 class="calculator-container__h2">calc</h2>
+      <div class="theme-selector">
+        <p class="theme-selector__p">theme</p>
+        <div class="theme-selector__box">
+          <div class="theme-selector__numbers">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <div class="theme-selector__switch">
+            <div class="theme-selector__button"></div>
+          </div>
         </div>
       </div>
-      <div>
-        <p>399,981</p>
-      </div>
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-              <td>DEL</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>+</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>.</td>
-              <td>0</td>
-              <td>/</td>
-              <td>x</td>
-            </tr>
-            <tr>
-              <td>RESET</td>
-              <td>=</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
     </div>
-  </main>
+    <div class="calculator-container__screen">
+      <p>399,981</p>
+    </div>
+    <div class="calculator-container__keypad">
+      <table>
+        <tbody>
+          <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>DEL</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>+</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>.</td>
+            <td>0</td>
+            <td>/</td>
+            <td>x</td>
+          </tr>
+          <tr>
+            <td>RESET</td>
+            <td>=</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> 
 </body>
 </html>
