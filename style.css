@@ -33,11 +33,18 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     font-family: var(--main-font-family);
-    font-size: var(--number-size);
     font-weight: 700;
+}
+
+.body--theme-one {
+    background-color: var(--main-background-theme-1);
 }
 
 .calculator-container {
@@ -45,9 +52,10 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    max-width: 375px;
     height: 100%;
+    max-height: 667px;
     padding: 30px;
-    background-color: var(--main-background-theme-1);
 }
 
 .calculator-container__top {
@@ -56,48 +64,65 @@ body {
     align-items: center;
     width: 100%;
     height: 10%;
-    background-color: blue;
+}
+
+.calculator-container__top--theme-one {
+    color: var(--text-light-theme-1);
 }
 
 .calculator-container__h2 {
     font-size: 3.2rem;
 }
 
-.theme-selector  {
+
+.theme-selector {
     display: flex;
     gap: 25px;
 }
 
 .theme-selector__p {
-    font-size: 2rem;
     align-self: flex-end;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .theme-selector__box {
     display: flex;
     flex-direction: column;
-    font-size: 1.6rem; 
 }
 
 .theme-selector__numbers {
     display: flex;
     justify-content: space-between;
     padding: 0 5px;
+    font-size: 1.2rem; 
 }
 
 .theme-selector__switch {
-    width: 60px;
-    height: 20px;
-    padding: 3px;
+    display: flex;
+    align-items: center;
+    width: 65px;
+    height: 24px;
+    margin-top: 5px;
+    padding: 5px;
     border-radius: 20px;
-    background-color: red;
+}
+
+.theme-selector__switch--theme-one {
+    background-color: var(--keypad-background-theme-1);
 }
 
 .theme-selector__button {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: black;
+    border: 1px solid var(--key-toggle-shadow-theme-1);
+}
+
+.theme-selector__button--theme-one {
+    background-color: var(--key-toggle-background-theme-1);
 }
 
 .calculator-container__screen {
@@ -107,16 +132,24 @@ body {
     width: 100%;
     height: 15%;
     padding: 20px;
-    background-color: red;
+    font-size: 4rem;
     border-radius: 10px;
+}
+
+.calculator-container__screen--theme-one {
+    background-color: var(--screen-background-theme-1);
+    color: var(--text-light-theme-1);
 }
 
 .calculator-container__keypad {
     width: 100%;
     height: 75%;
     padding: 20px;
-    background-color: gray;
     border-radius: 10px;
+}
+
+.calculator-container__keypad--theme-one {
+    background-color: var(--keypad-background-theme-1);
 }
 
 .keypad-container {
@@ -132,11 +165,13 @@ body {
     gap: 10px;
     width: 100%;
     height: 20%;
+    max-height: 64px;
 }
 
 .keypad-container__buttons {
     width: 25%;
-    font-size: 2.5rem;
+    max-height: 60px;
+    font-size: var(--number-size);
     font-weight: 700;
     font-family: var(--main-font-family);
     border: none;
@@ -144,18 +179,42 @@ body {
     cursor: pointer;
 }
 
-.keypad-container__buttons-del {
+.keypad-container__buttons--theme-one {
+    color: var(--text-color-theme-1);
+    background-color: var(--number-key-background-theme-1);
+    border-bottom: 4px solid var(--number-key-shadow-theme-1);
+}
+
+.keypad-container__button-del {
     font-size: 2rem;
 }
 
-.keypad-container__buttons--reset {
+.keypad-container__button-del--theme-one {
+    color: var(--text-light-theme-1);
+    background-color: var(--key-background-theme-1);
+    border-bottom: 4px solid var(--key-shadow);    
+}
+
+.keypad-container__button-reset {
     width: 50%;
     font-size: 2rem;
 }
 
-.keypad-container__buttons--equal {
+.keypad-container__button-reset--theme-one {
+    color: var(--text-light-theme-1);
+    background-color: var(--key-background-theme-1);
+    border-bottom: 4px solid var(--key-shadow);
+}
+
+.keypad-container__button-equal {
     width: 50%;
     font-size: 2rem;
+}
+
+.keypad-container__button--equal--theme-one {
+    color: var(--text-light-theme-1);
+    background-color: var(--key-toggle-background-theme-1);
+    border-bottom: 4px solid var(--key-toggle-shadow-theme-1);
 }
 
 .attribution { 
