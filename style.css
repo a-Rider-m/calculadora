@@ -25,6 +25,28 @@
         --primary-text-color--deep-blue: hsl(221, 14%, 31%);
         --light-text-color--deep-blue: hsl(0, 0%, 100%);
 
+    
+    /*Theme dark-purple-theme 03 Colors*/
+        
+        /*background colors*/
+        --main--dark-purple:    hsl(268, 75%, 9%);
+        --keypad-screen-toggle--dark-purple:  hsl(268, 71%, 12%);
+
+        /*Keys colors*/
+
+        --numbers--dark-purple: hsl(268, 47%, 21%);
+        --numbers-shadow--dark-purple: hsl(290, 70%, 36%);
+
+        --toggle-equals--dark-purple: hsl(176, 100%, 44%);
+        --toggle-equals-shadow--dark-purple: hsl(177, 92%, 70%);
+
+        --res-del--dark-purple: hsl(281, 89%, 26%);
+        --res-del--shadow-dark-purple: hsl(285, 91%, 52%);
+
+        /*font colors*/
+        --primary-text-color--dark-purple: hsl(52, 100%, 62%);
+        --light-text-color--dark-purple: hsl(0, 0%, 100%);
+        --dark-text-color--dark-purple: hsl(198, 20%, 13%);
 
 }
 
@@ -53,6 +75,10 @@ body {
     background-color: var(--main--deep-blue);
 }
 
+.body--dark-purple {
+    background-color: var(--main--dark-purple);
+}
+
 .calculator-container {
     display: flex;
     flex-direction: column;
@@ -74,6 +100,10 @@ body {
 
 .calculator-container__top--deep-blue {
     color: var(--light-text-color--deep-blue);
+}
+
+.calculator-container__top--dark-purple {
+    color: var(--primary-text-color--dark-purple);
 }
 
 .calculator-container__h2 {
@@ -121,15 +151,24 @@ body {
     background-color: var(--keypad--deep-blue);
 }
 
+.theme-selector__switch--dark-purple {
+    background-color: var(--keypad-screen-toggle--dark-purple);
+}
+
 .theme-selector__button {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    border: 1px solid var(--toggle-equals-shadow--deep-blue);
 }
 
 .theme-selector__button--deep-blue {
+    border: 1px solid var(--toggle-equals-shadow--deep-blue);
     background-color: var(--toggle-equals--deep-blue);
+}
+
+.theme-selector__button--dark-purple {
+    border: 1px solid var(--toggle-equals-shadow--dark-purple);
+    background-color: var(--toggle-equals--dark-purple);
 }
 
 /*End theme selector*/
@@ -153,6 +192,11 @@ body {
     color: var(--light-text-color--deep-blue);
 }
 
+.calculator-container__screen--dark-purple {
+    background-color: var(--keypad-screen-toggle--dark-purple);
+    color: var(--primary-text-color--dark-purple);
+}
+
 /*End screen*/
 
 
@@ -166,6 +210,10 @@ body {
 
 .calculator-container__keypad--deep-blue {
     background-color: var(--keypad--deep-blue);
+}
+
+.calculator-container__keypad--dark-purple {
+    background-color: var(--keypad-screen-toggle--dark-purple);
 }
 
 .keypad-container {
@@ -201,6 +249,12 @@ body {
     border-bottom: 4px solid var(--numbers-shadow--deep-blue);
 }
 
+.keypad-container__buttons--dark-purple {
+    color: var(--primary-text-color--dark-purple);
+    background-color: var(--numbers--dark-purple);
+    border-bottom: 4px solid var(--numbers-shadow--dark-purple);
+}
+
 .buttons-del-res-equals {
     font-size: 2rem;   
 }
@@ -209,6 +263,12 @@ body {
     color: var(--light-text-color--deep-blue);
     background-color: var(--res-del--deep-blue);
     border-bottom: 4px solid var(--res-del--shadow-deep-blue); 
+}
+
+.buttons-del-res--dark-purple {
+    color: var(--light-text-color--dark-purple);
+    background-color: var(--res-del--dark-purple);
+    border-bottom: 4px solid var(--res-del--shadow-dark-purple);
 }
 
 .buttons-reset-equals {
@@ -221,11 +281,18 @@ body {
     border-bottom: 4px solid var(--toggle-equals-shadow--deep-blue);
 }
 
+.button--equal--dark-purple {
+    color: var(--dark-text-color--dark-purple);
+    background-color: var(--toggle-equals--dark-purple);
+    border-bottom: 4px solid var(--toggle-equals-shadow--dark-purple);
+}
+
 .attribution { 
     font-size: 11px; 
     font-weight: 400;
     text-align: center;
     margin-bottom: 15px; 
+    font-size: 1.6rem;
 }
 
 /*End keypad*/
@@ -233,10 +300,17 @@ body {
 
 /*Start attributions*/
 .attribution--deep-blue {
-    font-size: 1.6rem;
     color: var(--light-text-color--deep-blue);
+}
+
+.attribution--dark-purple {
+    color: var(--primary-text-color--dark-purple);
 }
 
 .attribution--deep-blue a {
     color: var(--numbers--deep-blue);
+}
+
+.attribution--dark-purple a {
+    color: var(--light-text-color--dark-purple);
 }
