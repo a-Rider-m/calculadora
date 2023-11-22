@@ -25,6 +25,28 @@
         --primary-text-color--deep-blue: hsl(221, 14%, 31%);
         --light-text-color--deep-blue: hsl(0, 0%, 100%);
 
+    /*Theme light-theme 02 Colors*/
+
+        /*background colors*/
+        --main--light:  hsl(0, 0%, 90%);
+        --keypad-toggle--light:  hsl(0, 5%, 81%);
+        --screen--light: hsl(0, 0%, 93%);
+
+        /*Keys colors*/
+
+        --numbers--light: hsl(45, 7%, 89%);
+        --numbers-shadow--light: hsl(35, 11%, 61%);
+
+        --toggle-equals--light: hsl(25, 98%, 40%);
+        --toggle-equals-shadow--light: hsl(25, 99%, 27%);
+
+        --res-del--light: hsl(185, 42%, 37%);
+        --res-del--shadow-light: hsl(185, 58%, 25%);
+
+        /*font colors*/
+        --primary-text-color--light: hsl(60, 10%, 19%);
+        --light-text-color--light: hsl(0, 0%, 100%);   
+
     
     /*Theme dark-purple-theme 03 Colors*/
         
@@ -75,6 +97,10 @@ body {
     background-color: var(--main--deep-blue);
 }
 
+.body--light {
+    background-color: var(--main--light);
+}
+
 .body--dark-purple {
     background-color: var(--main--dark-purple);
 }
@@ -100,6 +126,10 @@ body {
 
 .calculator-container__top--deep-blue {
     color: var(--light-text-color--deep-blue);
+}
+
+.calculator-container__top--light {
+    color: var(--primary-text-color--light);
 }
 
 .calculator-container__top--dark-purple {
@@ -151,6 +181,10 @@ body {
     background-color: var(--keypad--deep-blue);
 }
 
+.theme-selector__switch--light {
+    background-color: var(--keypad-toggle--light);
+}
+
 .theme-selector__switch--dark-purple {
     background-color: var(--keypad-screen-toggle--dark-purple);
 }
@@ -164,6 +198,11 @@ body {
 .theme-selector__button--deep-blue {
     border: 1px solid var(--toggle-equals-shadow--deep-blue);
     background-color: var(--toggle-equals--deep-blue);
+}
+
+.theme-selector__button--light {
+    border: 1px solid var(--toggle-equals-shadow--light);
+    background-color: var(--toggle-equals--light);
 }
 
 .theme-selector__button--dark-purple {
@@ -192,6 +231,11 @@ body {
     color: var(--light-text-color--deep-blue);
 }
 
+.calculator-container__screen--light {
+    background-color: var(--screen--light);
+    color: var(--primary-text-color--light);
+}
+
 .calculator-container__screen--dark-purple {
     background-color: var(--keypad-screen-toggle--dark-purple);
     color: var(--primary-text-color--dark-purple);
@@ -210,6 +254,10 @@ body {
 
 .calculator-container__keypad--deep-blue {
     background-color: var(--keypad--deep-blue);
+}
+
+.calculator-container__keypad--light {
+    background-color: var(--keypad-toggle--light);
 }
 
 .calculator-container__keypad--dark-purple {
@@ -249,6 +297,12 @@ body {
     border-bottom: 4px solid var(--numbers-shadow--deep-blue);
 }
 
+.keypad-container__buttons--light {
+    color: var(--primary-text-color--light);
+    background-color: var(--numbers--light);
+    border-bottom: 4px solid var(--numbers-shadow--light);
+}
+
 .keypad-container__buttons--dark-purple {
     color: var(--primary-text-color--dark-purple);
     background-color: var(--numbers--dark-purple);
@@ -265,6 +319,12 @@ body {
     border-bottom: 4px solid var(--res-del--shadow-deep-blue); 
 }
 
+.buttons-del-res--light {
+    color: var(--light-text-color--light);
+    background-color: var(--res-del--light);
+    border-bottom: 4px solid var(--res-del--shadow-light);
+}
+
 .buttons-del-res--dark-purple {
     color: var(--light-text-color--dark-purple);
     background-color: var(--res-del--dark-purple);
@@ -279,6 +339,12 @@ body {
     color: var(--light-text-color--deep-blue);
     background-color: var(--toggle-equals--deep-blue);
     border-bottom: 4px solid var(--toggle-equals-shadow--deep-blue);
+}
+
+.button--equal--light {
+    color: var(--light-text-color--light);
+    background-color: var(--toggle-equals--light);
+    border-bottom: 4px solid var(--toggle-equals-shadow--light);
 }
 
 .button--equal--dark-purple {
