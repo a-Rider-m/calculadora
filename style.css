@@ -1,24 +1,30 @@
 :root {
-
-    /*Theme 1 Colors*/
-    --main-background-theme-1: hsl(222, 26%, 31%);
-    --keypad-background-theme-1:  hsl(223, 31%, 20%);
-    --screen-background-theme-1: hsl(224, 36%, 15%);
-
-    --key-background-theme-1: hsl(225, 21%, 49%);
-    --key-shadow: hsl(224, 28%, 35%);
-
-    --key-toggle-background-theme-1: hsl(6, 63%, 50%);
-    --key-toggle-shadow-theme-1: hsl(6, 70%, 34%);
-
-    --number-key-background-theme-1: hsl(30, 25%, 89%);
-    --number-key-shadow-theme-1: hsl(28, 16%, 65%);
-
-    --text-color-theme-1: hsl(221, 14%, 31%);
-    --text-light-theme-1: hsl(0, 0%, 100%);
-
-    --main-font-family: 'League Spartan', sans-serif;
+    
     --number-size: 3.2rem;
+    --primary-font: 'League Spartan', sans-serif;
+
+    /*Theme deep-blue Colors*/
+
+    /*background colors*/
+    --main--deep-blue: hsl(222, 26%, 31%);
+    --keypad--deep-blue:  hsl(223, 31%, 20%);
+    --screen--deep-blue: hsl(224, 36%, 15%);
+
+    /*Keys colors*/
+
+    --numbers--deep-blue: hsl(30, 25%, 89%);
+    --numbers-shadow--deep-blue: hsl(28, 16%, 65%);
+
+    --toggle-equals--deep-blue: hsl(6, 63%, 50%);
+    --toggle-equals-shadow--deep-blue: hsl(6, 70%, 34%);
+
+    --res-del--deep-blue: hsl(225, 21%, 49%);
+    --res-del--shadow-deep-blue: hsl(224, 28%, 35%);
+
+    /*font colors*/
+    --primary-text-color--deep-blue: hsl(221, 14%, 31%);
+    --light-text-color--deep-blue: hsl(0, 0%, 100%);
+
 
 }
 
@@ -39,12 +45,12 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    font-family: var(--main-font-family);
+    font-family: var(--primary-font);
     font-weight: 700;
 }
 
-.body--theme-one {
-    background-color: var(--main-background-theme-1);
+.body--deep-blue {
+    background-color: var(--main--deep-blue);
 }
 
 .calculator-container {
@@ -66,8 +72,8 @@ body {
     height: 10%;
 }
 
-.calculator-container__top--theme-one {
-    color: var(--text-light-theme-1);
+.calculator-container__top--deep-blue {
+    color: var(--light-text-color--deep-blue);
 }
 
 .calculator-container__h2 {
@@ -110,19 +116,19 @@ body {
     border-radius: 20px;
 }
 
-.theme-selector__switch--theme-one {
-    background-color: var(--keypad-background-theme-1);
+.theme-selector__switch--deep-blue {
+    background-color: var(--keypad--deep-blue);
 }
 
 .theme-selector__button {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    border: 1px solid var(--key-toggle-shadow-theme-1);
+    border: 1px solid var(--toggle-equals-shadow--deep-blue);
 }
 
-.theme-selector__button--theme-one {
-    background-color: var(--key-toggle-background-theme-1);
+.theme-selector__button--deep-blue {
+    background-color: var(--toggle-equals--deep-blue);
 }
 
 .calculator-container__screen {
@@ -136,9 +142,9 @@ body {
     border-radius: 10px;
 }
 
-.calculator-container__screen--theme-one {
-    background-color: var(--screen-background-theme-1);
-    color: var(--text-light-theme-1);
+.calculator-container__screen--deep-blue {
+    background-color: var(--screen--deep-blue);
+    color: var(--light-text-color--deep-blue);
 }
 
 .calculator-container__keypad {
@@ -148,8 +154,8 @@ body {
     border-radius: 10px;
 }
 
-.calculator-container__keypad--theme-one {
-    background-color: var(--keypad-background-theme-1);
+.calculator-container__keypad--deep-blue {
+    background-color: var(--keypad--deep-blue);
 }
 
 .keypad-container {
@@ -179,50 +185,44 @@ body {
     cursor: pointer;
 }
 
-.keypad-container__buttons--theme-one {
-    color: var(--text-color-theme-1);
-    background-color: var(--number-key-background-theme-1);
-    border-bottom: 4px solid var(--number-key-shadow-theme-1);
+.keypad-container__buttons--deep-blue {
+    color: var(--primary-text-color--deep-blue);
+    background-color: var(--numbers--deep-blue);
+    border-bottom: 4px solid var(--numbers-shadow--deep-blue);
 }
 
-.keypad-container__button-del {
-    font-size: 2rem;
+.buttons-del-res-equals {
+    font-size: 2rem;   
 }
 
-.keypad-container__button-del--theme-one {
-    color: var(--text-light-theme-1);
-    background-color: var(--key-background-theme-1);
-    border-bottom: 4px solid var(--key-shadow);    
+.buttons-del-res--deep-blue {
+    color: var(--light-text-color--deep-blue);
+    background-color: var(--res-del--deep-blue);
+    border-bottom: 4px solid var(--res-del--shadow-deep-blue); 
 }
 
-.keypad-container__button-reset {
+.buttons-reset-equals {
     width: 50%;
-    font-size: 2rem;
 }
 
-.keypad-container__button-reset--theme-one {
-    color: var(--text-light-theme-1);
-    background-color: var(--key-background-theme-1);
-    border-bottom: 4px solid var(--key-shadow);
-}
-
-.keypad-container__button-equal {
-    width: 50%;
-    font-size: 2rem;
-}
-
-.keypad-container__button--equal--theme-one {
-    color: var(--text-light-theme-1);
-    background-color: var(--key-toggle-background-theme-1);
-    border-bottom: 4px solid var(--key-toggle-shadow-theme-1);
+.keypad-container__button--equal--deep-blue {
+    color: var(--light-text-color--deep-blue);
+    background-color: var(--toggle-equals--deep-blue);
+    border-bottom: 4px solid var(--toggle-equals-shadow--deep-blue);
 }
 
 .attribution { 
     font-size: 11px; 
     font-weight: 400;
-    text-align: center; 
+    text-align: center;
+    margin-bottom: 15px; 
 }
 
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+.attribution--deep-blue {
+    font-size: 1.6rem;
+    color: var(--light-text-color--deep-blue);
+}
+
+.attribution--deep-blue a {
+    color: var(--numbers--deep-blue);
 }
