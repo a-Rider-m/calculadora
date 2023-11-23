@@ -25,6 +25,11 @@
         --primary-text-color--deep-blue: hsl(221, 14%, 31%);
         --light-text-color--deep-blue: hsl(0, 0%, 100%);
 
+        /*Hover states*/
+        --res-del-hover--deep-blue: hsl(223.81deg 51.22% 75.88%);
+        --toggle-equals-hover--deep-blue: hsl(6.46deg 92.94% 66.67%);
+        --numbers-hover--deep-blue: hsl(0deg 0% 100%);
+
     /*Theme light-theme 02 Colors*/
 
         /*background colors*/
@@ -46,6 +51,11 @@
         /*font colors*/
         --primary-text-color--light: hsl(60, 10%, 19%);
         --light-text-color--light: hsl(0, 0%, 100%);   
+
+        /*Hover states*/
+        --res-del-hover--light: hsl(184.04deg 39.56% 55.88%);
+        --toggle-equals-hover--light: hsl(25.03deg 100% 60.98%);
+        --numbers-hover--light: hsl(0deg 0% 100%);
 
     
     /*Theme dark-purple-theme 03 Colors*/
@@ -69,6 +79,11 @@
         --primary-text-color--dark-purple: hsl(52, 100%, 62%);
         --light-text-color--dark-purple: hsl(0, 0%, 100%);
         --dark-text-color--dark-purple: hsl(198, 20%, 13%);
+
+        /*Hover states*/
+        --res-del-hover--dark-purple: hsl(280.16deg 56.44% 44.12%);
+        --toggle-equals-hover--dark-purple: hsl(176.64deg 100% 79.02%);
+        --numbers-hover--dark-purple: hsl(267.5deg 53.57% 43.92%);
 
 }
 
@@ -379,4 +394,96 @@ body {
 
 .attribution--dark-purple a {
     color: var(--light-text-color--dark-purple);
+}
+
+@media screen and (min-width: 800px) {
+    .calculator-container {
+        max-width: 650px;
+        max-height: 850px;
+    }
+
+    .theme-selector__p {
+        font-size: 1.6rem;
+    }
+
+    .theme-selector__switch {
+        width: 80px;
+        height: 30px;
+    }
+    
+    .theme-selector__button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .theme-selector__button:hover {
+        background-color: hsl(6.46deg 92.94% 66.67%);
+        cursor: pointer;
+    }
+    
+    .calculator-container__screen {
+        padding: 0 30px;
+        font-size: 5rem;
+    }
+
+    .calculator-container__keypad {
+        padding: 30px;
+    }
+
+    .keypad-container {
+        gap: 20px;
+    }
+
+    .keypad-container__rows {
+        align-items: center;
+        max-height: none;
+        gap: 25px;
+    }
+
+    .keypad-container__buttons {
+        height: 90%;
+        max-height: none;
+        border-radius: 15px;
+    }
+
+    .buttons-del-res-equals {
+        font-size: 3rem;
+    }
+
+    .keypad-container__buttons--deep-blue:hover {
+        background-color: var(--numbers-hover--deep-blue);
+    }
+
+    .buttons-del-res--deep-blue:hover {
+        background-color: var(--res-del-hover--deep-blue);
+    }
+
+    .button--equal--deep-blue:hover {
+        background-color: var(--toggle-equals-hover--deep-blue);
+    }
+
+    .keypad-container__buttons--light:hover {
+        background-color: var(--numbers-hover--light);
+    }
+
+    .buttons-del-res--light:hover {
+        background-color: var(--res-del-hover--light);
+    }
+
+    .button--equal--light:hover {
+        background-color: var(--toggle-equals-hover--light);
+    }
+
+    .keypad-container__buttons--dark-purple:hover {
+        background-color: var(--numbers-hover--dark-purple);
+    }
+
+    .buttons-del-res--dark-purple:hover {
+        background-color: var(--res-del-hover--dark-purple);
+    }
+
+    .button--equal--dark-purple:hover {
+        background-color: var(--toggle-equals-hover--dark-purple);
+    }
+    
 }
