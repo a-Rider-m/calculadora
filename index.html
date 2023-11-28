@@ -10,11 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body class="body--deep-blue">
+<body id="body" class="body--deep-blue">
 
     <section class="calculator-container">
 
-        <div class="calculator-container__top 
+        <div id="calculator-top" class="calculator-container__top 
             calculator-container__top--deep-blue">
 
             <h2 class="calculator-container__h2">calc</h2>
@@ -39,7 +39,7 @@
                             3
                         </button>
                     </div>
-                    <div class="theme-selector__switch 
+                    <div id="switch" class="theme-selector__switch 
                         theme-selector__switch--deep-blue">
 
                         <button id="button-theme" class="theme-selector__button 
@@ -50,13 +50,13 @@
             </div>
         </div>
 
-        <div class="calculator-container__screen 
+        <div id="screen-container" class="calculator-container__screen 
             calculator-container__screen--deep-blue">
 
             <p>399,981</p>
         </div>
 
-        <div class="calculator-container__keypad 
+        <div id="keypad" class="calculator-container__keypad 
             calculator-container__keypad--deep-blue">
 
             <div class="keypad-container">
@@ -78,6 +78,7 @@
                         
                     <button type="button" class="keypad-container__buttons 
                         buttons-del-res-equals
+                        buttons-del-res
                         buttons-del-res--deep-blue">DEL
                     </button>
                 </div>
@@ -147,10 +148,11 @@
 
                     <button class="keypad-container__buttons 
                         buttons-reset-equals buttons-del-res-equals
+                        buttons-del-res
                         buttons-del-res--deep-blue">RESET
                     </button>
 
-                    <button class="keypad-container__buttons 
+                    <button id="button-equal" class="keypad-container__buttons 
                         buttons-del-res-equals 
                         buttons-reset-equals 
                         button--equal--deep-blue">=
@@ -161,11 +163,11 @@
 
     </section>
 
-    <div class="attribution attribution--deep-blue">
+    <div id="attribution" class="attribution attribution--deep-blue">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="#">Your Name Here</a>.
     </div> 
     
-    <script src="./main.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

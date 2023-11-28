@@ -201,11 +201,11 @@ body {
 }
 
 .theme-selector__number--light {
-    color: var(--light-text-color--light);
+    color: var(--primary-text-color--light);
 }
 
 .theme-selector__number--dark-purple {
-    color: var(--light-text-color--dark-purple);
+    color: var(--primary-text-color--dark-purple);
 }
 
 .theme-selector__switch {   
