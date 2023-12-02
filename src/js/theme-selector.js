@@ -8,7 +8,7 @@ const screenContainer = document.querySelector('#screen-container');
 const keypad = document.querySelector('#keypad');
 const keypadButtons = document.querySelectorAll('.keypad-container__buttons');
 const keypadButtonsDelRes = document.querySelectorAll('.buttons-del-res');
-const keypadButtonEqual = document.querySelector('#button-equal');
+const keypadButtonEqual = document.querySelector('#btn-equal');
 const attribution = document.querySelector('#attribution')
 
 let currentTheme = '--deep-blue';
