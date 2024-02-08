@@ -1,13 +1,11 @@
-import { themeSelector } from "./theme-selector.js";
-import { addNumber } from "./calculator-screen.js";
-import { deletNumber } from "./calculator-screen.js";
-import { clear } from "./calculator-screen.js";
+import { toggleThemeColors } from "./theme-selector.js";
+import { addNumberScreen } from "./calculator-screen.js";
+import { deletNumberScreen } from "./calculator-screen.js";
+import { clearScreen } from "./calculator-screen.js";
 
 //Boton selector de temas
-const buttonTheme = document.querySelectorAll('.theme-selector__number');
-const screen = document.querySelector('#screen');
-buttonTheme.forEach(themeSelector);
-
+const btnSwitch = document.querySelectorAll('.theme-selector__number');
+btnSwitch.forEach(toggleThemeColors);
 
 //Botones calculadora
 const btn1 = document.querySelector('#btn-1');
@@ -31,21 +29,43 @@ const btnDel = document.querySelector('#btn-del');
 const btnReset = document.querySelector('#btn-reset');
 const btnEqual = document. querySelector('btn-equal');
 
-const arrayButtons = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnPlus, btnMinus, btnMultiply, btnDivide, btnDecimal];
-const operatorButtons = [btnPlus, btnMinus, btnMultiply, btnDivide, btnDecimal];
+const operatorButtons = [
+    btnPlus, 
+    btnMinus, 
+    btnMultiply, 
+    btnDivide
+];
 
+const buttonsList = [
+    btn1, 
+    btn2, 
+    btn3, 
+    btn4, 
+    btn5, 
+    btn6, 
+    btn7, 
+    btn8, 
+    btn9, 
+    btn0, 
+    btnDecimal, 
+    ...operatorButtons
+];
 
-//Funciones de pantalla
-btnDel.addEventListener('click', deletNumber);
-btnReset.addEventListener('click', clear);
+buttonsList.forEach((e) => {
 
-
-arrayButtons.forEach((e) => {
     e.addEventListener('click', ()=> {
-        addNumber(e.value);
+        addNumberScreen(e.value);
     });
+
 });
 
+btnDel.addEventListener('click', deletNumberScreen);
+btnReset.addEventListener('click', clearScreen);
+
+
+
+
+const screen = document.querySelector('#screen');
 function calculatora(...numbers) {
     
     console.log(numbers.reduce((n, cN) => n + cN, 0))    
