@@ -5,6 +5,8 @@ export function addNumber(valorConcat) {
 
     if(valorActual.length < 1 || valorActual === '0') {
         valorActual = valorConcat;
+    } else if(valorActual.length > 9) {
+        valorActual = 'E9';
     } else {
         valorActual += valorConcat;
     };

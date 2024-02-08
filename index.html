@@ -10,14 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body id="body" 
-    class="body--deep-blue">
+<body id="body" class="body--deep-blue">
 
     <section class="calculator-container">
 
         <div id="calculator-top" 
-            class="calculator-container__top 
-            calculator-container__top--deep-blue">
+            class="calculator-container__top calculator-container__top--deep-blue">
 
             <h2 class="calculator-container__h2">calc</h2>
 
@@ -28,24 +26,27 @@
                 <div class="theme-selector__box">
 
                     <div class="theme-selector__numbers">
-                        <button type="button" id="theme-1" class="theme-selector__number
-                            theme-selector__number--deep-blue">
-                            1
-                        </button>
-                        <button type="button" id="theme-2" class="theme-selector__number
-                            theme-selector__number--deep-blue">
-                            2
-                        </button>
-                        <button type="button" id="theme-3" class="theme-selector__number
-                            theme-selector__number--deep-blue">
-                            3
-                        </button>
-                    </div>
-                    <div id="switch" class="theme-selector__switch 
-                        theme-selector__switch--deep-blue">
 
-                        <button id="button-theme" class="theme-selector__button 
-                            theme-selector__button--deep-blue">
+                        <button type="button" id="theme-1" 
+                                class="theme-selector__number theme-selector__number--deep-blue">1
+                        </button>
+
+                        <button type="button" id="theme-2" 
+                                class="theme-selector__number theme-selector__number--deep-blue">2
+                        </button>
+
+                        <button type="button" id="theme-3" 
+                                class="theme-selector__number theme-selector__number--deep-blue">3
+                        </button>
+
+                    </div>
+
+                    <div id="switch" 
+                        class="theme-selector__switch theme-selector__switch--deep-blue">
+
+                        <!--Se debe poner un elemento de accesibilidad que identifique el tipo de botón-->
+                        <button id="button-theme" 
+                                class="theme-selector__button theme-selector__button--deep-blue">
                         </button>
                     </div>
                 </div>
@@ -53,15 +54,13 @@
         </div>
 
         <div id="screen-container" 
-            class="calculator-container__screen 
-            calculator-container__screen--deep-blue">
+            class="calculator-container__screen calculator-container__screen--deep-blue">
 
             <p id="screen">0</p>
         </div>
 
         <div id="keypad" 
-            class="calculator-container__keypad 
-            calculator-container__keypad--deep-blue">
+            class="calculator-container__keypad calculator-container__keypad--deep-blue">
 
             <div class="keypad-container">
 
@@ -69,25 +68,20 @@
                 <div class="keypad-container__rows">
 
                     <button type="button" value="7" id="btn-7" 
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">7
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">7
                     </button>
                         
                     <button type="button" value="8" id="btn-8" 
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">8
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">8
                     </button>
                         
                     <button type="button" value="9" id="btn-9" 
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">9
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">9
                     </button>
                         
-                    <button type="button" id="btn-del" 
-                        class="keypad-container__buttons 
-                        buttons-del-res-equals
-                        buttons-del-res
-                        buttons-del-res--deep-blue">DEL
+                    <button type="button" value="DEL" id="btn-del" 
+                            class="keypad-container__buttons buttons-del-res-equals
+                            buttons-del-res buttons-del-res--deep-blue">DEL
                     </button>
                 </div>
 
@@ -95,23 +89,19 @@
                 <div class="keypad-container__rows">
 
                     <button type="button" value="4" id="btn-4"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">4
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">4
                     </button>
                         
                     <button type="button" value="5" id="btn-5"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">5
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">5
                     </button>
                         
                     <button type="button" value="6" id="btn-6"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">6
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">6
                     </button>
                         
-                    <button type="button" id="btn-plus"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">+
+                    <button type="button" value="+" id="btn-plus"
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">+
                     </button>
                 </div>
 
@@ -119,47 +109,39 @@
                 <div class="keypad-container__rows">
 
                     <button type="button" value="1" id="btn-1"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">1
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">1
                     </button>
                         
                     <button type="button" value="2" id="btn-2"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">2
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">2
                     </button>
                         
                     <button type="button" value="3"  id="btn-3"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">3
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">3
                     </button>
                         
-                    <button type="button" id="btn-minus"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">-
+                    <button type="button" value="-" id="btn-minus"
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">-
                     </button>
                 </div>
 
                 <!--Number 0 and keys-->
                 <div class="keypad-container__rows">
 
-                    <button type="button" id="btn-decimal"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">.
+                    <button type="button" value="." id="btn-decimal"
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">.
                     </button>
                         
                     <button type="button" value="0" id="btn-0"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">0
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">0
                     </button>
                         
-                    <button type="button" id="btn-divide"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">/
+                    <button type="button" value="/" id="btn-divide"
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">/
                     </button>
                         
-                    <button type="button" id="btn-multipy"
-                        class="keypad-container__buttons 
-                        keypad-container__buttons--deep-blue">x
+                    <button type="button" value="x" id="btn-multiply"
+                            class="keypad-container__buttons keypad-container__buttons--deep-blue">x
                     </button>
                 </div>
 
@@ -167,16 +149,13 @@
                 <div class="keypad-container__rows">
 
                     <button id="btn-reset"
-                        class="keypad-container__buttons 
-                        buttons-reset-equals buttons-del-res-equals
-                        buttons-del-res
-                        buttons-del-res--deep-blue">RESET
+                            class="keypad-container__buttons buttons-reset-equals buttons-del-res-equals
+                            buttons-del-res buttons-del-res--deep-blue">RESET
                     </button>
 
-                    <button id="btn-equal" class="keypad-container__buttons 
-                        buttons-del-res-equals 
-                        buttons-reset-equals 
-                        button--equal--deep-blue">=
+                    <button value="=" id="btn-equal" 
+                            class="keypad-container__buttons buttons-del-res-equals 
+                            buttons-reset-equals button--equal--deep-blue">=
                     </button>
                 </div>
             </div>
@@ -184,7 +163,8 @@
 
     </section>
 
-    <div id="attribution" class="attribution attribution--deep-blue">
+    <div id="attribution" 
+        class="attribution attribution--deep-blue">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="#">Your Name Here</a>.
     </div> 

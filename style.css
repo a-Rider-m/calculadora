@@ -187,9 +187,9 @@ body {
 
 .theme-selector__number {
     z-index: 1;
-    width: 33%;
     display: flex;
     justify-content: center;
+    width: 33%;
     font-size: 1.2rem;
     font-weight: 700;
     background-color: transparent;
@@ -536,5 +536,4 @@ body {
     .button--equal--dark-purple:hover {
         background-color: var(--toggle-equals-hover--dark-purple);
     }
-    
 }
