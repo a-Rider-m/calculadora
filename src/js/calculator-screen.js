@@ -41,3 +41,9 @@ export function clearScreen() {
     screen.innerText = valorActual;
 
 };
+
+
+/*
+    1. Debo restringir a un maximo de números, que no supere el tamaño de la pantalla.
+        Podria hacerlo con un condicional if que detecte el tamaño de la pantalla.
+*/

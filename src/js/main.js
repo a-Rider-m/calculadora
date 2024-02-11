@@ -7,6 +7,8 @@ import { clearScreen } from "./calculator-screen.js";
 const btnSwitch = document.querySelectorAll('.theme-selector__number');
 btnSwitch.forEach(toggleThemeColors);
 
+const screen = document.querySelector('#screen');
+
 //Botones calculadora
 const btn1 = document.querySelector('#btn-1');
 const btn2 = document.querySelector('#btn-2');
@@ -27,7 +29,7 @@ const btnDecimal = document.querySelector('#btn-decimal');
 
 const btnDel = document.querySelector('#btn-del');
 const btnReset = document.querySelector('#btn-reset');
-const btnEqual = document. querySelector('btn-equal');
+const btnEqual = document.querySelector('#btn-equal');
 
 const operatorButtons = [
     btnPlus, 
@@ -36,7 +38,7 @@ const operatorButtons = [
     btnDivide
 ];
 
-const buttonsList = [
+const btnNumbersList = [
     btn1, 
     btn2, 
     btn3, 
@@ -47,7 +49,10 @@ const buttonsList = [
     btn8, 
     btn9, 
     btn0, 
-    btnDecimal, 
+]
+
+const buttonsList = [ 
+    ...btnNumbersList,
     ...operatorButtons
 ];
 
@@ -62,17 +67,72 @@ buttonsList.forEach((e) => {
 btnDel.addEventListener('click', deletNumberScreen);
 btnReset.addEventListener('click', clearScreen);
 
-
-
-
-const screen = document.querySelector('#screen');
-function calculatora(...numbers) {
+class calculator {
     
-    console.log(numbers.reduce((n, cN) => n + cN, 0))    
-};
+    constructor() {
+        this.prev = '';
+        this.operator = '';
+        this.current = '';
+    }
 
-calculatora(1, 3 ,2 ,4 ,5 ,2)
-/*
-    1. Debo restringir a un maximo de números, que no supere el tamaño de la pantalla.
-        Podria hacerlo con un condicional if que detecte el tamaño de la pantalla.
-*/
+    append(number) {
+        this.current += number;
+    }
+
+    operation(operand) {
+        this.operator = operand;
+        this.prev = this.current;
+        this.current = '';
+    }
+
+
+    
+    calculate() {
+
+        const prev = Number(this.prev);
+        const current = Number(this.current);
+        let resultado;
+
+        if(this.prev === '' && this.current === '') {
+            console.log('No se otorgaron valores');
+        };
+
+        if(prev === 0 || current === 0 && this.operator === '/') {
+            console.log('SyntaxError');
+        }
+
+        switch(this.operator) {
+            case '+':
+                resultado = prev + current;
+                break;
+            case '-':
+                resultado = prev - current;
+                break;
+            case 'x':
+                resultado = prev * current;
+                break;
+            case '/':
+                resultado = prev / current;
+        }
+
+        console.log(resultado);
+    }
+}
+
+const personalCalc = new calculator();
+
+btnNumbersList.forEach((e) => {
+    e.addEventListener('click', () => {
+        personalCalc.append(e.value);
+    });
+});
+
+operatorButtons.forEach((e) => {
+    e.addEventListener('click', () => {
+        personalCalc.operation(e.value);
+    });
+});
+
+btnEqual.addEventListener('click', () => {
+    personalCalc.calculate();
+});
