@@ -1,7 +1,4 @@
 import { toggleThemeColors } from "./theme-selector.js";
-import { addNumberScreen } from "./calculator-screen.js";
-import { deletNumberScreen } from "./calculator-screen.js";
-import { clearScreen } from "./calculator-screen.js";
 
 //Boton selector de temas
 const btnSwitch = document.querySelectorAll('.theme-selector__number');
@@ -56,17 +53,6 @@ const buttonsList = [
     ...operatorButtons
 ];
 
-buttonsList.forEach((e) => {
-
-    e.addEventListener('click', ()=> {
-        addNumberScreen(e.value);
-    });
-
-});
-
-btnDel.addEventListener('click', deletNumberScreen);
-btnReset.addEventListener('click', clearScreen);
-
 class calculator {
     
     constructor() {
@@ -77,45 +63,46 @@ class calculator {
 
     append(number) {
         this.current += number;
+        this.showScreen(`${this.prev} ${this.operator} ${this.current}`);
     }
 
     operation(operand) {
         this.operator = operand;
         this.prev = this.current;
         this.current = '';
+
+        this.showScreen(`${this.prev} ${this.operator}`);
     }
-
-
     
     calculate() {
 
         const prev = Number(this.prev);
         const current = Number(this.current);
-        let resultado;
 
         if(this.prev === '' && this.current === '') {
-            console.log('No se otorgaron valores');
+            return
         };
-
-        if(prev === 0 || current === 0 && this.operator === '/') {
-            console.log('SyntaxError');
-        }
 
         switch(this.operator) {
             case '+':
-                resultado = prev + current;
+                this.current = prev + current;
                 break;
             case '-':
-                resultado = prev - current;
+                this.current = prev - current;
                 break;
             case 'x':
-                resultado = prev * current;
+                this.current = prev * current;
                 break;
             case '/':
-                resultado = prev / current;
+                this.current = prev / current;
         }
 
-        console.log(resultado);
+
+        this.showScreen(this.current);
+    }
+
+    showScreen(value) {
+        screen.innerText = value;
     }
 }
 
