@@ -7,64 +7,28 @@ btnSwitch.forEach(toggleThemeColors);
 const screen = document.querySelector('#screen');
 
 //Botones calculadora
-const btn1 = document.querySelector('#btn-1');
-const btn2 = document.querySelector('#btn-2');
-const btn3 = document.querySelector('#btn-3');
-const btn4 = document.querySelector('#btn-4');
-const btn5 = document.querySelector('#btn-5');
-const btn6 = document.querySelector('#btn-6');
-const btn7 = document.querySelector('#btn-7');
-const btn8 = document.querySelector('#btn-8');
-const btn9 = document.querySelector('#btn-9');
-const btn0 = document.querySelector('#btn-0');
+const numberBtnsList = document.querySelectorAll('.number-btns');
+const operatorButtons = document.querySelectorAll('.operator-btns');
 
-const btnPlus = document.querySelector('#btn-plus');
-const btnMinus = document.querySelector('#btn-minus');
-const btnMultiply = document.querySelector('#btn-multiply');
-const btnDivide = document.querySelector('#btn-divide');
 const btnDecimal = document.querySelector('#btn-decimal');
 
 const btnDel = document.querySelector('#btn-del');
 const btnReset = document.querySelector('#btn-reset');
 const btnEqual = document.querySelector('#btn-equal');
 
-const operatorButtons = [
-    btnPlus, 
-    btnMinus, 
-    btnMultiply, 
-    btnDivide
-];
 
-const btnNumbersList = [
-    btn1, 
-    btn2, 
-    btn3, 
-    btn4, 
-    btn5, 
-    btn6, 
-    btn7, 
-    btn8, 
-    btn9, 
-    btn0, 
-]
-
-const buttonsList = [ 
-    ...btnNumbersList,
-    ...operatorButtons
-];
-
-class calculator {
+class MyCalculator {
     
     constructor() {
         this.prev = '';
         this.operator = '';
         this.current = '';
-    }
+    };
 
     append(number) {
         this.current += number;
         this.showScreen(`${this.prev} ${this.operator} ${this.current}`);
-    }
+    };
 
     operation(operand) {
         this.operator = operand;
@@ -72,7 +36,7 @@ class calculator {
         this.current = '';
 
         this.showScreen(`${this.prev} ${this.operator}`);
-    }
+    };
     
     calculate() {
 
@@ -95,20 +59,42 @@ class calculator {
                 break;
             case '/':
                 this.current = prev / current;
+                break;
         }
 
-
+        this.operator = '';
         this.showScreen(this.current);
-    }
+    };
 
     showScreen(value) {
+
+        if(!value || value.length < 1) {
+            screen.innerText = 0;
+            return
+        };
+
         screen.innerText = value;
-    }
+    };
+
+    resetCalc() {
+        this.prev = '';
+        this.operator = '';
+        this.current = '';
+
+        this.showScreen(this.current);
+    };
+
+    del() {
+        
+        this.current = this.current.slice(0, -1);
+        this.showScreen(`${this.prev} ${this.operator} ${this.current}`);
+        
+    };
 }
 
-const personalCalc = new calculator();
+const personalCalc = new MyCalculator();
 
-btnNumbersList.forEach((e) => {
+numberBtnsList.forEach((e) => {
     e.addEventListener('click', () => {
         personalCalc.append(e.value);
     });
@@ -123,3 +109,11 @@ operatorButtons.forEach((e) => {
 btnEqual.addEventListener('click', () => {
     personalCalc.calculate();
 });
+
+btnReset.addEventListener('click', () => {
+    personalCalc.resetCalc();
+})
+
+btnDel.addEventListener('click', () => {
+    personalCalc.del();
+})
