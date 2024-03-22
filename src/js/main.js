@@ -20,50 +20,65 @@ const btnEqual = document.querySelector('#btn-equal');
 class MyCalculator {
     
     constructor() {
-        this.prev = '';
-        this.operator = '';
-        this.current = '';
+
+        this.value = '';
     };
 
-    append(number) {
-        this.current += number;
-        this.showScreen(`${this.prev} ${this.operator} ${this.current}`);
-    };
+    append(value) {
 
-    operation(operand) {
-        this.operator = operand;
-        this.prev = this.current;
-        this.current = '';
+        if(this.value == '' && value == '0') {
 
-        this.showScreen(`${this.prev} ${this.operator}`);
-    };
-    
-    calculate() {
+            return;
+        } else if(
+            this.value == '' && value == '+' || 
+            this.value == '' && value == '-' || 
+            this.value == '' && value == '*' ||
+            this.value == '' && value == '/') {
 
-        const prev = Number(this.prev);
-        const current = Number(this.current);
+            return;
+        } else if(this.value == 'Infinity') {
 
-        if(this.prev === '' && this.current === '') {
-            return
+            this.value = value;
+            this.showScreen(`${this.value}`);
+        } else {
+            
+            this.value += value;
+            this.showScreen(`${this.value}`);
         };
+        
+    };
 
-        switch(this.operator) {
-            case '+':
-                this.current = prev + current;
-                break;
-            case '-':
-                this.current = prev - current;
-                break;
-            case 'x':
-                this.current = prev * current;
-                break;
-            case '/':
-                this.current = prev / current;
-                break;
-        }
+    calculate() {
+        
+        this.value = eval(this.value);
+        this.value = this.value.toString();
 
-        this.operator = '';
-        this.showScreen(this.current);
+        if(this.value == 'Infinity') {
+            
+            this.showScreen('SyntaxError');
+        } else {
+
+            this.showScreen(this.value);
+        };
+    };
+
+    resetCalc() {
+
+        this.value = '';
+        this.showScreen(this.value);
+    };
+
+    del() {
+
+        if(this.value == 'Infinity') {
+
+            this.value = ''
+            this.showScreen(this.value);
+        } else {
+
+            this.value = this.value.slice(0, -1);
+            this.showScreen(this.value);
+        };
     };
 
     showScreen(value) {
@@ -74,21 +89,6 @@ class MyCalculator {
         };
 
         screen.innerText = value;
-    };
-
-    resetCalc() {
-        this.prev = '';
-        this.operator = '';
-        this.current = '';
-
-        this.showScreen(this.current);
-    };
-
-    del() {
-        
-        this.current = this.current.slice(0, -1);
-        this.showScreen(`${this.prev} ${this.operator} ${this.current}`);
-        
     };
 }
 
@@ -102,7 +102,7 @@ numberBtnsList.forEach((e) => {
 
 operatorButtons.forEach((e) => {
     e.addEventListener('click', () => {
-        personalCalc.operation(e.value);
+        personalCalc.append(e.value);
     });
 });
 
@@ -117,3 +117,14 @@ btnReset.addEventListener('click', () => {
 btnDel.addEventListener('click', () => {
     personalCalc.del();
 })
+
+btnDecimal.addEventListener('click', () => {
+    personalCalc.append(btnDecimal.value);
+});
+
+/* 
+    1. el cero no debe ser un número que entre primero
+    2. Diseñar un algoritmo para el botón borrar
+    3. 
+
+*/
